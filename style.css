@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Prata');
+
+html, body { padding: 0; margin: 0; overflow-x: hidden; }
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f4a4bf;
+}
+
+/* Text styling */
+h1 {
+    font-size: 65px;
+    text-align: center;
+    text-shadow: 3px 3px 3px grey;
+    margin: 0 0 10px 0;
+}
+h2 {
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 2px grey;
+    margin: 0 0 10px 0;
+}
+p {
+    text-align: justify;
+    color: rgba(0,0,0,.75);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 1px;
+    font-family: 'Prata', serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Basic element styling */
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+iframe {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#volpino-show-image {
+    height: 300px;
+    widows: 300px;
+}
+
+/* Key elements of the page */
+.container {
+    width: 800px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.content {
+    padding: 15px 30px 15px 30px;
+    background-color: #F8BBD0;
+    border: 5px solid rgba(255,255,255,.2);
+    border-radius: 5px;
+}
+
+/* Navigation styling */
+.nav {
+    line-height: 40px;
+    height: 40px;
+    margin: 0;
+    background-color: #F8BBD0;
+    width: 100%;
+    text-align: center;
+}
+.nav a {
+    display: inline-block;
+    line-height: inherit;
+    font-family: 'Prata', serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgba(0,0,0,.7);
+    padding: 0 15px 0 15px;
+    border-left: 2px solid #f4a4bf;
+    margin-right: -4px;
+}
+.nav a:hover {
+    background-color: white;
+}
+.nav a:first-child, .nav a:last-child {
+    border-left: none;
+}
+.nav .icon {
+  display: none;
+}
+
+/* Footer styling */
+footer {
+    height: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.ftr {
+    padding: 5px 15px 5px 15px;
+    background: rgba(255,255,255,.2);
+    border-radius: 5px;
+    margin-left: 30px;
+    float: left;
+    color: rgba(0,0,0,.6);
+    font-weight: 400;
+    letter-spacing: normal;
+    font-size: 14px;
+    font-family: Arial;
+}
+
+/* surprise video button */
+.ftr-vid-button {
+    background: none;
+}
+#vidbutton {
+    font-family: 'Prata', serif;
+    border: none;
+    line-height: 20px;
+    background-color: pink;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    color: rgba(0,0,0,.6);
+    font-weight: 600;
+}
+#vidbutton:hover {
+    border: 2px solid (255,255,255,.6);
+    color: black;
+}
+
+.share {
+    float: right;
+}
+
+.share > * {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+/* Page-specific styling */
+.links {
+    padding-left: 100px;
+}
+.links, .links a {
+    list-style-type: none;
+    color: blueviolet;
+    font-size: 25px;
+    line-height: 2em;
+}
+.ytvid {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* Responsiveness for mobile devices */
+
+/* mobile phones (collapsing hamburger menu) */
+@media screen and (max-width: 767px) {
+  .nav a:not(:last-child) {display: none;}
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nav {position: relative; text-align: center;}
+  .nav.mobile .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.mobile a {
+    background-color: rgba(255,255,255,.8);
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  .nav.mobile a:hover {
+    background-color: rgba(255,255,255,1);
+  }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        margin-top: 0px;
+    }
+    .content {
+        border: 0;
+        padding: 20px 20px 10px 20px;
+        border-radius: 0;
+    }
+    h1 { font-size: 40px; }
+    h2 { font-size: 30px; }
+    p { letter-spacing: normal; font-size: 16px; }
+    img { max-width: 100%; }
+    .links, .links a {
+        font-size: 18px;
+        padding-left: 0;
+    }
+    #bgvid, #vidbutton { display: none; }
+}
+
+/* tablets (no collapsing nav but larger navigation bar) */
+@media screen and (max-width: 1024px) {
+    .nav {
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        letter-spacing: normal;
+    }
+    .links {
+        padding-left: 30px;
+    }
+}
+/* responsiveness ends */
+
+
+/* background video */
+video {
+    opacity: .05;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+}
+.stopfade { 
+    opacity: .5;
+}
